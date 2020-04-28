@@ -1,0 +1,13 @@
+{
+  "database": {
+    "rules": "conf.php"
+  },
+  "hosting": {
+    "public": "new",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

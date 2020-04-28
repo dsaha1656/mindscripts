@@ -1,0 +1,111 @@
+[debug] [2018-03-09T17:34:43.737Z] ----------------------------------------------------------------------
+[debug] [2018-03-09T17:34:43.744Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Dibyendu\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2018-03-09T17:34:43.745Z] CLI Version:   3.17.5
+[debug] [2018-03-09T17:34:43.745Z] Platform:      win32
+[debug] [2018-03-09T17:34:43.745Z] Node Version:  v8.10.0
+[debug] [2018-03-09T17:34:43.747Z] Time:          Fri Mar 09 2018 23:04:43 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:34:43.747Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-09T17:34:43.784Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-03-09T17:34:43.785Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Documents\SITES\MySites\MindScript
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2018-03-09T17:35:07.669Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-09T17:35:07.671Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/qViRsEdi5p00vWFEBhB8yNIvvke9F36HeMkCXf3tnNc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Mar 09 2018 23:05:07 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:35:08.483Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-09T17:35:08.563Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects  
+  
+ Fri Mar 09 2018 23:05:08 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:35:10.565Z] <<< HTTP RESPONSE 200
+[info] i  .firebaserc already has a default project, skipping
+[info] 
+=== Database Setup
+[info] 
+[info] Firebase Realtime Database Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] +  Database Rules for undefined have been downloaded to g.
+[info] Future modifications to g will update Database Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[info] 
+=== Functions Setup
+[info] 
+[info] A functions directory will be created in your project with a Node.js
+[info] package pre-configured. Functions can be deployed with firebase deploy.
+[info] 
+[debug] [2018-03-09T17:35:32.427Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-09T17:35:32.429Z] > authorizing via signed-in user
+[debug] [2018-03-09T17:35:32.433Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-03-09T17:35:32.434Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/qViRsEdi5p00vWFEBhB8yNIvvke9F36HeMkCXf3tnNc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Fri Mar 09 2018 23:05:32 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:35:33.046Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-09T17:35:33.238Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/mindscript-dit  
+  
+ Fri Mar 09 2018 23:05:33 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:35:34.918Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-09T17:35:34.923Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/mindscript-dit/tokens  
+  
+ Fri Mar 09 2018 23:05:34 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:35:36.636Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-09T17:35:36.683Z] >>> HTTP REQUEST PATCH https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/mindscript-dit?updateMask=usageSettings  
+ { usageSettings: { consumerEnableStatus: 'ENABLED' } } 
+ Fri Mar 09 2018 23:05:36 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:35:36.690Z] >>> HTTP REQUEST PATCH https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/mindscript-dit?updateMask=usageSettings  
+ { usageSettings: { consumerEnableStatus: 'ENABLED' } } 
+ Fri Mar 09 2018 23:05:36 GMT+0530 (India Standard Time)
+[debug] [2018-03-09T17:35:39.550Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-09T17:35:39.575Z] <<< HTTP RESPONSE 200
+[info] +  Wrote functions/package.json
+[info] +  Wrote functions/.eslintrc.json
+[info] +  Wrote functions/index.js
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

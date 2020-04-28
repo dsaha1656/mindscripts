@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>MemeMaker-Simple</title>
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <style>
+    #image-container {
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+   
+    
+  </script>
+
+  <div>
+    <input type="file" id="file" />  
+  </div>
+  <div id="image-container">
+  <div style="padding: 20px; background-color: #439a82; margin:5px">
+    <div id="can"><canvas width="500" height="500" ></canvas></div></div>
+    <div>
+      <span>Top Line:</span><br/>
+      <input id="topLineText" type="text"></input><br/>
+      <span>Bottom Line:</span><br/>
+      <input id="bottomLineText" type="text"><br/>
+      <a href="#" id="download" target="_self"><button id="saveBtn">Save</button></a>
+    </div>
+  </div><div style="width: 0px; height: 0px; display: none;">
+  <div id="frame" style="padding: 20px; background-color: #439a82; margin:5px"><iframe src="" id="iframe" height="500px" width="500px"></iframe></div></div>
+  <script>
+    function textChangeListener (evt) {
+      var id = evt.target.id;
+      var text = evt.target.value;
+      
+      if (id == "topLineText") {
+        window.topLineText = text;
+      } else {
+        window.bottomLineText = text;
+      }
+      
+      redrawMeme(window.imageSrc, window.topLineText, window.bottomLineText);
+    }
+    
+    function redrawMeme(image, topLine, bottomLine) {
+      // Get Canvas2DContext
+      var canvas = document.querySelector('canvas');
+      var ctx = canvas.getContext("2d");
+      if (image != null)
+      	if (image.width<image.height) {
+      		var w = (image.width/image.height)*500;
+      		ctx.fillRect(0,0,(500-w)/2,500);
+      		ctx.fillRect((500+w)/2,0,(500-w)/2,500);
+        	ctx.drawImage(image, (500-w)/2, 0, w, canvas.height);
+      	}
+      	else if(image.width>image.height){
+      		var h = ((image.height/image.width)*500);
+      		ctx.fillRect(0,0,500,(500-h)/2);
+      		ctx.fillRect(0,(500+h)/2,500,(500-h)/2);
+      		ctx.drawImage(image, 0, (500-h)/2, canvas.width, h);
+      	}
+      	else {
+      		ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      	}
+      // Text attributes
+      ctx.font = '40pt Impact';
+      ctx.textAlign = 'center';
+      ctx.strokeStyle = 'black';
+      ctx.lineWidth = 3;
+      ctx.fillStyle = 'white';
+      
+      if (topLine != null) {
+        ctx.fillText(topLine, canvas.width / 2, 60);
+        ctx.strokeText(topLine, canvas.width / 2, 60);
+      }
+      
+      if (bottomLine != null) {
+        ctx.fillText(bottomLine, canvas.width / 2, canvas.height - 20);
+        ctx.strokeText(bottomLine, canvas.width / 2, canvas.height - 20);
+      }
+    }
+    
+    function saveFile() {
+    document.getElementById('iframe').src = document.querySelector('canvas').toDataURL('image/png'); 
+    document.getElementById('can').innerHTML = document.getElementById('frame').innerHTML;
+  }
+    
+
+    function handleFileSelect(evt) {
+      var canvasWidth = 500;
+      var canvasHeight = 500;
+      var file = evt.target.files[0];
+      
+      
+      
+      var reader = new FileReader();
+      reader.onload = function(fileObject) {
+        var data = fileObject.target.result;
+        document.getElementById('can').innerHTML = '<canvas width="500" height="500"></canvas>';
+        // Create an image object
+        var image = new Image();
+        image.onload = function() {
+          window.imageSrc = this;
+          redrawMeme(window.imageSrc, null, null);
+        }
+        
+        // Set image data to background image.
+        image.src = data;
+        console.log(fileObject.target.result);
+      };
+      reader.readAsDataURL(file)
+    }
+    
+    window.topLineText = "";
+    window.bottomLineText = "";
+    var input1 = document.getElementById('topLineText');
+    var input2 = document.getElementById('bottomLineText');
+    input1.oninput = textChangeListener;
+    input2.oninput = textChangeListener;
+    document.getElementById('file').addEventListener('change', handleFileSelect, false);
+    document.querySelector('button').addEventListener('click', saveFile, false);
+  </script>
+
+</body>
+</html>
